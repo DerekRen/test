@@ -1,0 +1,81 @@
+<div class="panel-Model col-1">
+	<div class="panel-title"><h5>悬浮提示示例</h5></div>
+	<div class="panel-content">				
+		<div class="grid-columns">
+			<div class="panel-Model panel-default col-1">
+				<div class="panel-title">DEMO</div>
+				<div class="panel-content">
+					<div id="test1" class="well" style="padding:10px;">test1：请将鼠标悬浮于此……（异步）</div>
+
+					<div id="test2" class="well" style="padding:10px;">test2：请将鼠标悬浮于此……（字符串）</div>
+				</div>
+			</div>
+			<div class="panel-Model panel-default col-1">
+				<div class="panel-title">示例数据</div>
+				<div class="panel-content">
+					<div class="well" style="padding:10px;">
+						<xmp>
+<table class="table">
+    <thead class="text-left">
+        <tr>
+            <th>#</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>男</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>王麻子</td>
+            <td>男</td>
+            <td>65</td>
+        </tr>
+    </tbody>
+</table>
+						</xmp>
+					</div>
+					<div class="well" style="padding:10px;">
+						tip字符串tip字符串tip字符串tip字符串tip字符串tip字符串
+					</div>
+				</div>
+			</div>
+			<div class="panel-Model panel-default col-1">
+				<div class="panel-title">DEMO代码</div>
+				<div class="panel-content">
+					<pre>
+$("#test1").hoverTip({
+    url:"src/data/hoverTip.html"
+});
+//如果异步有其他参数，需要在元素（test1）上添加data-arg属性，属性值为异步参数的字符串（例如：a=aa&b=bb&c=cc）
+
+$("#test2").hoverTip({
+    tip:"tip字符串tip字符串tip字符串tip字符串tip字符串tip字符串"
+});
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$("#test1").hoverTip({
+		url:"src/data/hoverTip.html"
+	});
+	$("#test2").hoverTip({
+		tip:"tip字符串tip字符串tip字符串tip字符串tip字符串tip字符串"
+	});
+</script>

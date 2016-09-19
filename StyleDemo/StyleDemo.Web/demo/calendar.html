@@ -1,0 +1,193 @@
+<style>
+	.input{
+		width: 200px;
+		height: 30px;
+		line-height: 30px;
+		padding-left: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		outline: none;
+	}
+</style>
+<div class="panel-Model col-1">
+	<div class="panel-title">API</div>
+	<div class="panel-content">				
+		<table class="table table-bordered thead-colored text-left">
+			<thead>
+				<tr>
+					<td>属性名称</td>
+					<td>说明</td>
+					<td>默认值</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>monthNum</td>
+					<td>日历个数</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>style</td>
+					<td>日历的称呈现方式,默认是"pick"（日期选择）,可配置为"show"，用于呈现数据，需要同时配置wrapper属性，作为日历的父元素</td>
+					<td>’pick‘</td>
+				</tr>
+				<tr>
+					<td>wrapper</td>
+					<td>日历的父元素选择器，通常和style设置为"show"配合使用</td>
+					<td>""</td>
+				</tr>
+				<tr>
+					<td>firstDay</td>
+					<td>日历面板上面从星期几开始，默认是0，从星期日开始</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					
+					<td>如果设置了style是pick的话，就需要写对应的方法，pick下的属性</td>
+					
+				</tr>
+				<tr>
+					<td>startDate</td>
+					<td>设置日历的可选区域的起始时间，默认是1900-1-1</td>
+					<td>1900-1-1</td>
+				</tr>
+				<tr>
+					<td>endDate</td>
+					<td>设置日历的可选区域的终止时间，默认是2100-12-31</td>
+					<td>2100-12-31</td>
+				</tr>
+				<tr>
+					<td>elem</td>
+					<td>与日历关联的元素选择器，在"pick"方式，用作定位参照元素，如果elem是input的元素，日历单击时会把日期值传递给该input框</td>
+					<td>""</td>
+				</tr>
+				<tr>
+					<td>mode</td>
+					<td>选择的模式：默认"rangeFrom"，表示选择起始时间或者单个时间, 可配置为"rangeTo"，表示选择结束时间，在currentDate中配置了起始时间，会有区间选择效果</td>
+					<td>"rangeFrom"</td>
+				</tr>
+				<tr>
+					<td>currentDate</td>
+					<td>currentDate设置为数组时，第1个值表示起始时间，第2个表示终止时间，设置为日期字符串或日期对象时，表示起始时间</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td>offset</td>
+					<td>自定义偏移，支持top和left属性，除了特殊情况使用，通常采用自动定位就好</td>
+					<td>null</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="grid-columns">
+	<div class="panel-Model col-1">
+		<div class="panel-title">代码示例</div>
+		<div class="panel-content">
+		<pre>
+var cal = new $.Calendar({
+monthNum:"1" 	//单历写1，双历写2
+});
+var endDate = new Date();
+endDate.setMonth(endDate.getMonth() + 12);//创建一个结束的日期并大于开始日期12个月，就是最大选到12个月以内
+$("#startTime1").on("focus", function(e) {
+    cal1.pick({
+        elem: this,  // 如果设置了elem的值，且elem参数为input框
+        startDate: new Date(),//开始日期New Date
+        mode: "rangeFrom",
+        endDate: endDate,
+        currentDate: [new Date()]
+    });
+});
+
+下面代码是选结束日期使用的，如果不需要的话是不需要写的
+
+$("#endTime1").on("focus", function(e) {
+    var startDate = new Date($("#startTime1").val());//让开始日期等于上面选的日期
+    endDates = new Date(startDate);
+    endDates.setMonth(endDates.getMonth() + 12);
+    cal1.pick({
+        elem: this,  // 如果设置了elem的值，且elem参数为input框
+        startDate: startDate,
+        mode: "rangeFrom",
+        endDate: endDates,
+        currentDate: [startDate]
+    });
+});
+		</pre>
+	</div>
+	</div>		
+	<div class="panel-Model col-1">
+		<div class="panel-title">demo日历1</div>
+		<div class="panel-content">				
+			开始时间:<input id="startTime1" class="input" /><br>
+			结束时间:<input id="endTime1" class="input" />
+		</div>
+	</div>
+	<div class="panel-Model col-1">
+		<div class="panel-title">demo日历2</div>
+		<div class="panel-content">				
+			开始时间:<input id="startTime2" class="input" /><br>
+			结束时间:<input id="endTime2" class="input" />
+		</div>
+	</div>
+</div>
+<script>
+	var cal1 = new $.Calendar({
+		monthNum:"1"
+	});
+	var endDate = new Date();
+	endDate.setMonth(endDate.getMonth() + 12);
+	$("#startTime1").on("focus", function(e) {
+	    cal1.pick({
+	        elem: this,  // 如果设置了elem的值，且elem参数为input框
+	        startDate: new Date(),
+	        mode: "rangeFrom",
+	        endDate: endDate,
+	        currentDate: [new Date()],
+	        offset:{left:5,top:5}
+	    });
+	});
+	$("#endTime1").on("focus", function(e) {
+	    var startDate = new Date($("#startTime1").val());
+	    endDates = new Date(startDate);
+	    endDates.setMonth(endDates.getMonth() + 12);
+	    cal1.pick({
+	        elem: this,  // 如果设置了elem的值，且elem参数为input框
+	        startDate: startDate,
+	        mode: "rangeFrom",
+	        endDate: endDates,
+	        currentDate: [startDate],
+	        offset:{left:5,top:5}
+	    });
+	});
+	var cal2 = new $.Calendar({
+		monthNum:"2"
+	});
+	var endDate = new Date();
+	endDate.setMonth(endDate.getMonth() + 12);
+	$("#startTime2").on("focus", function(e) {
+	    cal2.pick({
+	        elem: this,  // 如果设置了elem的值，且elem参数为input框
+	        startDate: new Date(),
+	        mode: "rangeFrom",
+	        endDate: endDate,
+	        currentDate: [new Date()],
+	        offset:{left:5,top:5}
+	    });
+	});
+	$("#endTime2").on("focus", function(e) {
+	    var startDate = new Date($("#startTime2").val());
+	    endDates = new Date(startDate);
+	    endDates.setMonth(endDates.getMonth() + 12);
+	    cal2.pick({
+	        elem: this,  // 如果设置了elem的值，且elem参数为input框
+	        startDate: startDate,
+	        mode: "rangeFrom",
+	        endDate: endDates,
+	        currentDate: [startDate],
+	        offset:{left:5,top:5}
+	    });
+	});
+</script>

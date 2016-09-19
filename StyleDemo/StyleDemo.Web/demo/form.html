@@ -1,0 +1,197 @@
+	
+<div class="panel-Model col-1">
+	<div class="panel-title">
+		<h5>默认表单</h5>
+	</div>
+	<div class="panel-content">
+		<form class="form">
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框"><span class="splitEle">-</span><input type="text" class="col-xs-1" placeholder="输入框">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+				<span class="splitEle">-</span>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">多选：</label><label><input type="checkbox" name="testCk" checked/><i></i>选项一</label>
+				<label><input type="checkbox" name="testCk" disabled/><i></i>选项二</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项三</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项四</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">单选：</label><label><input type="radio" name="testRa" checked/><i></i>选项一</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa" disabled/><i></i>选项四</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">文本域：</label>
+				<textarea name="" id="" class="col-xs-1"></textarea>
+			</div>
+		</form>
+	</div>
+	<div class="panel-footer">
+		<div class="formBtns">
+			<button class="btn btn-sm btn-success">筛选</button>
+			<button class="btn btn-sm btn-default">取消</button>
+		</div>
+	</div>
+</div>
+
+<div class="panel-Model col-1 togglePanel">
+	<div class="panel-title">
+		<h5 class="col-xs-1">折叠表单一 <span class="text-danger">$("#toggleForm1").toggleForm(45);//45为收起后高度，int型,#toggleForm1是后面的箭头</span></h5>
+		<i class="icon-chevron-up" id="toggleForm1"></i>
+	</div>
+	<div class="panel-content">
+		<form class="form">
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框"><span class="splitEle">-</span><input type="text" class="col-xs-1" placeholder="输入框">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+				<span class="splitEle">-</span>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">多选：</label><label><input type="checkbox" name="testCk" checked/><i></i>选项一</label>
+				<label><input type="checkbox" name="testCk" disabled/><i></i>选项二</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项三</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项四</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">单选：</label><label><input type="radio" name="testRa" checked/><i></i>选项一</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa" disabled/><i></i>选项四</label>
+			</div>			
+		</form>
+	</div>
+	<div class="panel-footer">
+		<div class="formBtns">
+			<button class="btn btn-sm btn-success">筛选</button>
+			<button class="btn btn-sm btn-default">取消</button>
+		</div>
+	</div>
+</div>
+
+<div class="panel-Model col-1 togglePanel">
+	<div class="panel-title">
+		<h5 class="col-xs-1">折叠表单二 <span class="text-danger">$("#toggleForm2").toggleForm();//默认完全收起,#toggleForm2是后面的箭头</span></h5>
+		<i class="icon-chevron-up" id="toggleForm2"></i>
+	</div>
+	<div class="panel-content">
+		<form class="form">
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框"><span class="splitEle">-</span><input type="text" class="col-xs-1" placeholder="输入框">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+				<span class="splitEle">-</span>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">多选：</label><label><input type="checkbox" name="testCk" checked/><i></i>选项一</label>
+				<label><input type="checkbox" name="testCk" disabled/><i></i>选项二</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项三</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项四</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">单选：</label><label><input type="radio" name="testRa" checked/><i></i>选项一</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa" disabled/><i></i>选项四</label>
+			</div>			
+		</form>
+	</div>
+	<div class="panel-footer">
+		<div class="formBtns">
+			<button class="btn btn-sm btn-success">筛选</button>
+			<button class="btn btn-sm btn-default">取消</button>
+		</div>
+	</div>
+</div>
+
+<div class="panel-Model col-1">
+	<div class="panel-title">
+		<h5>查询表单</h5>
+	</div>
+	<div class="panel-content">
+		<form class="form queryForm">
+			<div class="formItem col-xs-1">
+				<label class="formKey">字段名称：</label><label>默认输入框值</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">字段名称：</label><label class="text-success">类名：text-success</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">字段名称：</label><label class="text-danger">类名：text-danger</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">字段名称：</label><label class="text-warning">类名：text-warning</label>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="dist/script/form.js"></script>

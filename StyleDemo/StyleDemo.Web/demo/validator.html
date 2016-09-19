@@ -1,0 +1,67 @@
+<div class="panel-Model col-1">
+	<div class="panel-title">
+		<h5>验证表单</h5>
+	</div>
+	<div class="panel-content">
+		<form class="form">
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框" data-validator="letters">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">输入框：</label><input type="text" class="col-xs-1" placeholder="输入框1" data-validator="required"><span class="splitEle">-</span><input type="text" class="col-xs-1" placeholder="输入框2" data-validator="email">
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">选择框：</label>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+				<span class="splitEle">-</span>
+				<select name="" id="" class="col-xs-1">
+					<option value="">选项一</option>
+					<option value="">选项二</option>
+					<option value="">选项三</option>
+				</select>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">多选：</label><label><input type="checkbox" name="testCk" checked/><i></i>选项一</label>
+				<label><input type="checkbox" name="testCk" disabled/><i></i>选项二</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项三</label>
+				<label><input type="checkbox" name="testCk"/><i></i>选项四</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">单选：</label><label><input type="radio" name="testRa" checked/><i></i>选项一</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa"/><i></i>选项二</label>
+				<label><input type="radio" name="testRa" disabled/><i></i>选项四</label>
+			</div>
+			<div class="formItem col-xs-1">
+				<label class="formKey">文本域：</label>
+				<textarea name="" id="" class="col-xs-1"></textarea>
+			</div>
+		</form>
+	</div>
+	<div class="panel-footer">
+		<div class="formBtns">
+			<button class="btn btn-sm btn-success" id="test">筛选</button>
+			<button class="btn btn-sm btn-default">取消</button>
+		</div>
+	</div>
+</div>
+
+<script src="dist/script/validator.js"></script>
+<script>
+	$("#test").on("click",function(){
+		var ret = $(".form").validator();
+		console.log(ret)
+	});
+</script>

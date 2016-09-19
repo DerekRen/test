@@ -1,0 +1,235 @@
+<style>
+	pre{
+	    height: 100%;
+	    overflow: hidden;
+	    margin: 10px 0;
+	    word-break: normal;
+	    word-wrap: break-word;
+	}
+</style>
+	<div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>使用参数</h5>
+        </div>
+        <div class="panel-content">
+            <p>
+            默认值：<br>
+            width: null, //弹出层宽度<br>
+            height: null,  //弹出层高度<br>
+            autoSize: true,  //是否自适应尺寸,默认自适应<br>
+            autoHide: false,  //是否自自动消失，配合time参数共用<br>
+            time: 3000,  //自动消失时间，单位毫秒<br>
+            zIndex: 99999,  //弹出层定位层级<br>
+            hasMask: true,  //是否显示遮罩层<br>
+            hasClose: false,  //是否显示关闭按钮<br>
+            hasBtn: false,  //是否显示操作按钮，如取消，确定<br>
+            confirmValue: null,  //确定按钮文字内容<br>
+            confirm: function(){}, //点击确定后回调函数<br>
+            cancelValue: null,  //取消按钮文字内容<br>
+            cancel: function(){},  //点击取消后回调函数，默认关闭弹出框<br>
+            effect: '', //动画效果：fade(默认),newspaper,fall,scaled,flip-horizontal,flip-vertical,sign,<br>
+            type: 'normal', //对话框类型：normal(普通对话框),correct(正确/操作成功对话框),error(错误/警告对话框)<br>
+            title: '',  //标题内容，如果不设置，则连同关闭按钮（不论设置显示与否）都不显示标题<br>
+            content: ''  //正文内容，可以为纯字符串，html标签字符串
+            </p>
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>simple dialogBox</h5>
+        </div>
+        <div class="panel-content">
+            <pre>
+				$('#btn-simple').click(function(){
+				  $.dialog({
+				  	autoHide: true,
+					time: 3000,
+				    content: 'dialog content text'
+				  });
+				})
+			</pre>
+			<input type="button" id="btn-simple" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>stantard dialogBox</h5>
+        </div>
+        <div class="panel-content">
+			<pre>
+				$('#btn-stantard').click(function(){
+					$.dialog({
+						title: 'title text',
+						hasClose: true,
+						content: 'dialog content text,image,html file'
+					});
+				})
+			</pre>
+			<input type="button" id="btn-stantard" class="btn-success btn"  value="click me" />
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>custom size dialogBox</h5>
+        </div>
+        <div class="panel-content">
+			<pre>
+				$('#btn-custom-size').click(function(){
+					$.dialog({
+						width: 500,
+						height: 300,
+						title: 'title text',
+						hasClose: true,
+						content: '&lt;ul&gt;&lt;li&gt;Support custom dialog box style.&lt;/li&gt;&lt;li&gt;on the high version of brwosers support a series of animation effect&lt;/li&gt;&lt;li&gt;Support adaptive popup content size&lt;/li&gt;&lt;li&gt;Support the standard and the modal dialog box&lt;/li&gt;&lt;li&gt;Support IE7+,Firefox3+,Chrome and Oprea&lt;/li&gt;&lt;/ul&gt;'
+					});
+				})
+			</pre>
+			<input type="button" id="btn-custom-size" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>btn dialogBox</h5>
+        </div>
+        <div class="panel-content">
+			<pre>
+				$('#btn-btn').click(function(){
+					$.dialog({
+						hasClose: true,
+						hasBtn: true,
+						confirmValue: 'I am sure',
+						confirm: function(){
+							alert('this is callback function');
+						},
+						cancelValue: 'I will cancel',
+						title: 'title text',
+						content: 'dialog content text,image,html file'
+					});
+				})
+			</pre>
+			<input type="button" id="btn-btn" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+    <!-- 基本 -->
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>effect dialogBox</h5>
+        </div>
+        <div class="panel-content">
+            
+		<pre>
+			$('#btn-btn').click(function(){
+				$.dialog({
+					width: 500,
+					height: 260,
+					autoHide: true,
+					time: 3000,
+					effect: 'flip-horizontal',
+					title: 'title text',
+					content: 'dialog content text,image,html file'
+				});
+			})
+		</pre>
+		<input type="button" id="btn-effect" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>type dialogBox</h5>
+        </div>
+        <div class="panel-content">
+		<pre>
+			$('#btn-type').click(function(){
+				$.dialog({
+					type: 'correct'  //three type:'normal'(default),'correct','error',
+					width: 300,
+					height: 200,
+					hasMask: true,
+					autoHide: true,
+					time: 3000,
+					effect: 'fall',
+					title: 'title text',
+					content: 'dialog content text,image,html file'
+				});
+			})
+		</pre>   
+		<input type="button" id="btn-type" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+<script>
+$(function(){
+	//simple dialog
+	$('#btn-simple').click(function(){
+		$.dialog({
+			autoHide: true,
+			time: 3000,
+			hasMask: true,
+			content: 'dialog content text,image,html file'
+		});
+	})
+
+	//stantard dialog
+	$('#btn-stantard').click(function(){
+		$.dialog({
+			title: 'title text',
+			hasClose: true,
+			hasMask: true,
+			content: 'dialog content text,image,html file'
+		});
+	})
+	//custom size dialogBox
+	$('#btn-custom-size').click(function(){
+		$.dialog({
+			width: 500,
+			height: 300,
+			title: 'title text',
+			hasClose: true,
+			hasMask: true,
+			content: '<ul><li>Support custom dialog box style.</li><li>on the high version of brwosers support a series of animation effect</li><li>Support adaptive popup content size</li><li>Support the standard and the modal dialog box</li><li>Support IE7+,Firefox3+,Chrome and Oprea</li></ul>'
+		});
+	})
+	//btn dialogBox
+	var pop1 = $.dialog({
+			hasClose: true,
+			hasBtn: true,
+			confirmValue: 'I am sure',
+			confirm: function(){
+				alert('this is callback function');
+			},
+			cancelValue: 'I will cancel',
+			title: 'title text',
+			content: 'dialog content text,image,html file'
+		});
+	$('#btn-btn').click(function(){
+		pop1.show();
+	})
+	var pop2=$.dialog({
+			width: 500,
+			height: 260,
+			autoHide: true,
+			time: 3000,
+			effect: 'flip-horizontal',
+			title: 'title text',
+			content: 'dialog content text,image,html file'
+		});
+	//anamation effect dialogBox
+	$('#btn-effect').click(function(){
+		pop2.show();
+	})
+
+	//type dialogBox
+	$('#btn-type').click(function(){
+		$.dialog({
+			type: 'correct',  //three type:'normal'(default),'correct','error',
+			width: 400,
+			height: 250,
+			hasMask: true,
+			hasClose: true,
+			hasBtn: true,
+			effect: 'sign',
+			title: 'title text',
+			content: 'dialog content text,image,html file'
+		});
+	})
+})
+</script>

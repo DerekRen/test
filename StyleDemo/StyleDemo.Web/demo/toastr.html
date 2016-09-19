@@ -1,0 +1,25 @@
+<script src="dist/script/toastr.js"></script>
+<div class="panel-Model col-1">
+  <div class="panel-title">
+    <h5>提示框</h5>
+  </div>
+  <div class="panel-content">
+    <button class="btn-lg btn-block btn-success" onclick="toastrSuccess()">成功提示</button>
+    <button class="btn-lg btn-block btn-danger" onclick="toastrDanger()">错误提示</button>
+  </div>
+</div>
+</div>
+<script>
+    function toastrSuccess(){
+        $.toastr({type: "success",
+            text: "成功提示",
+            position: "top",
+            showTime: 3000})
+    }
+    function toastrDanger(){
+        $.toastr({type: "danger",
+            text: "错误提示",
+            position: "bottom",
+            showTime: 3000})
+    }
+</script>

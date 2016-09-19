@@ -1,0 +1,226 @@
+<style>
+	pre{
+	    height: 100%;
+	    overflow: hidden;
+	    margin: 10px 0;
+	    word-break: normal;
+	    word-wrap: break-word;
+	}
+	 .message{
+            font-size: 16px;
+            position: relative; 
+            font-family: 'Microsoft YaHei';
+            line-height: 20px;
+            padding: 50px;
+            display: none;
+        }
+        .pagecom{
+        	display:none;
+        }
+
+</style>
+	<div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>使用参数</h5>
+        </div>
+        <div class="panel-content">
+            <pre>
+ /**
+ * param {object} 配置对象
+ *      show {boolean} 是否立即显示弹层，默认不立即显示
+ *      fixed {boolean} 是否固定 默认true
+ *      isModal {boolean} 是否是模态，模态窗口有蒙版层，非模态窗口没有。默认true
+ *      left {number} 左边距离 默认居中
+ *      top  {number} 距离顶部距离 默认居中
+ *      relative {string || dom} 相对弹框元素（设置relative的情况lef和top相对该元素便宜）
+ *      zIndex {Array || number || string} 控制弹层zIndex数字，传数组第一个值表示窗口，第二个值表示背景层
+                                           传数字或者字符串的类型的数字表示设置窗口的zIndex（默认mask 9000 窗口9001）
+ *      pageWidth {number} 页面宽度，适合页面宽度固定，弹层内容不居中的情况，定位相对页面内容边框的
+ *      title  {string} 头部文案（同时显示关闭按钮）
+ *      dragable {boolean} 是否可拖动
+ *      beforeOpen {function} 打开前的回调函数，如果返回false，可以阻止打开
+ *      bgClose {boolean} 单击背景蒙版，是否关闭弹层
+ *      afterClose {function} 弹层关闭后的回调函数
+ *      beforeClose {function} 弹层关闭前的回调函数
+ *
+ * return object
+ *      show    {function}       打开弹框，可以传入一个参数 content，用来设置弹框内容
+ *      close   {function}       关闭弹框
+ *      destroy {function}       销毁弹框
+ *      content {function}       设置弹框内容。接受一个参数content
+**/
+
+使用方式基本上是自定义content，然后套进去使用。
+            </pre>
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>simple dialogBox</h5>
+        </div>
+        <div class="panel-content">
+        	<div class="subscribe-success message">
+	                <p>订阅成功</p>
+        	</div>
+
+            <pre>
+    
+
+ popShow = $.dialog({
+        content: $('.subscribe-success'),
+        title:' ',
+        bgClose:true,
+        className:'tips-pop',
+        click: function() {
+            this.close();
+        }
+    });
+
+			</pre>
+			<input type="button" id="btn-simple" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>page dialogBox</h5>
+        </div>
+        <div class="panel-content">
+        	<div class="p-xl pagecom">
+			    <div class="grid-columns">
+			        <div class="col-2">
+			            <address>
+			                <strong>北京百度在线网络技术有限公司</strong><br>
+			                北京市海淀区上地十街10号<br>
+			                <abbr title="Phone">总机：</abbr> (+86 10) 5992 8888
+			            </address>
+			        </div>
+			        <div class="col-4 text-right">
+			            <h4>单据编号：</h4>
+			            <h4 class="text-navy">H+-000567F7-00</h4>
+			            <address>
+			                        <strong>阿里巴巴集团</strong><br>
+			                        中国杭州市华星路99号东部软件园创业大厦6层(310099)<br>
+			                        <abbr title="Phone">总机：</abbr> (86) 571-8502-2088
+			                    </address>
+			            <p>
+			                <span><strong>日期：</strong> 2014-11-11</span>
+			            </p>
+			        </div>
+			    </div>
+			    <div class="table-responsive m-t">
+			        <table class="table invoice-table">
+			            <thead>
+			                <tr>
+			                    <th>清单</th>
+			                    <th class="text-right">数量</th>
+			                    <th class="text-right">单价</th>
+			                    <th class="text-right">税率</th>
+			                    <th class="text-right">总价</th>
+			                </tr>
+			            </thead>
+			            <tbody>
+			                <tr>
+			                    <td>
+			                        <div><strong>尚都比拉2013冬装新款女装 韩版修身呢子大衣 秋冬气质羊毛呢外套</strong>
+			                        </div>
+			                    </td>
+			                    <td class="text-right">1</td>
+			                    <td class="text-right">&yen;26.00</td>
+			                    <td class="text-right">&yen;1.20</td>
+			                    <td class="text-right">&yen;31,98</td>
+			                </tr>
+			                <tr>
+			                    <td>
+			                        <div><strong>11*11夏娜 新款斗篷毛呢外套 女秋冬呢子大衣 韩版大码宽松呢大衣</strong>
+			                        </div>
+			                        <small>双十一特价
+			                            </small>
+			                    </td>
+			                    <td class="text-right">2</td>
+			                    <td class="text-right">&yen;80.00</td>
+			                    <td class="text-right">&yen;1.20</td>
+			                    <td class="text-right">&yen;196.80</td>
+			                </tr>
+			                <tr>
+			                    <td>
+			                        <div><strong>2013秋装 新款女装韩版学生秋冬加厚加绒保暖开衫卫衣 百搭女外套</strong>
+			                        </div>
+			                    </td>
+			                    <td class="text-right">3</td>
+			                    <td class="text-right">&yen;420.00</td>
+			                    <td class="text-right">&yen;1.20</td>
+			                    <td class="text-right">&yen;1033.20</td>
+			                </tr>
+
+			            </tbody>
+			        </table>
+			    </div>
+			    <!-- /table-responsive -->
+			    <table class="table invoice-total" style="margin-top:20px;">
+			        <tbody>
+			            <tr>
+			                <td><strong>总价：</strong>
+			                </td>
+			                <td>&yen;1026.00</td>
+			            </tr>
+			            <tr>
+			                <td><strong>税：</strong>
+			                </td>
+			                <td>&yen;235.98</td>
+			            </tr>
+			            <tr>
+			                <td><strong>总计</strong>
+			                </td>
+			                <td>&yen;1261.98</td>
+			            </tr>
+			        </tbody>
+			    </table>
+
+			    <div class="text-right" style="margin-top:20px;">
+			        <button class="btn-success btn pay-btn"><i class="icon-dollar"></i>&nbsp;去付款</button>
+			    </div>
+			    <div class="well m-t"><strong>注意：</strong> 请在30日内完成付款，否则订单会自动取消。
+			    </div>
+			</div>
+
+
+            <pre>
+
+ popShow2 = $.dialog({
+                content: $('.pagecom'),
+                bgClose:true,
+            });
+
+			</pre>
+			<input type="button" id="btn-com" class="btn-success btn" value="click me" />
+        </div>
+    </div>
+<script>
+$(function(){
+	
+	//simple dialog
+	popShow2 = $.dialog({
+                        content: $('.pagecom'),
+                        bgClose:true,
+                    });
+	$('#btn-com').click(function(event) {
+		popShow2.show();
+	});
+	
+	$('.pay-btn').click(function(event) {
+		popShow.show();
+	});
+	//simple dialog
+	popShow = $.dialog({
+                        content: $('.subscribe-success'),
+                        title:' ',
+                        bgClose:true,
+                        click: function() {
+                            this.close();
+                        }
+                    });
+	$('#btn-simple').click(function(event) {
+		popShow.show();
+	});
+})
+</script>

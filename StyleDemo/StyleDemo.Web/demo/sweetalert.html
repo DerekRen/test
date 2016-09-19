@@ -1,0 +1,285 @@
+<div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>弹框说明</h5>
+        </div>
+        <div class="panel-content">
+            <table class="table table-bordered thead-colored">
+                <thead class="text-left">
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>title</td>
+                        <td>null</td>
+                        <td>弹窗标题</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td>null</td>
+                        <td>弹窗内容</td>
+                       
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>null</td>
+                        <td>弹窗类型，默认Null，加上该值后会有对应的logo显示"warning", "error", "success" ,"info"</td>
+                    </tr>
+                     <tr>
+                        <td>allowOutsideClick</td>
+                        <td>false</td>
+                        <td>允许用户点击非弹窗部分后关闭弹窗</td>
+                    </tr>
+                     <tr>
+                        <td>showCancelButton</td>
+                        <td>false</td>
+                        <td>如何设置为true，一个取消按钮将会显示，点击它会关闭弹窗</td>
+                    </tr>
+                     <tr>
+                        <td>showConfirmButton</td>
+                        <td>true</td>
+                        <td>如何设置为false，这个确认按钮会被隐藏。如果你设置了一个false，确保你设置了一个定时器或者让allowOutsideClick为true来用于关闭弹窗</td>
+                    </tr>
+                     <tr>
+                        <td>confirmButtonText</td>
+                        <td>"OK"</td>
+                        <td>弹窗确认按钮上的文字</td>
+                    </tr>
+                     <tr>
+                        <td>confirmButtonColor</td>
+                        <td>#1ab394</td>
+                        <td>确认按钮的颜色</td>
+                    </tr>
+                     <tr>
+                        <td>cancelButtonText</td>
+                        <td>"Cancel"</td>
+                        <td>取消按钮的文字</td>
+                    </tr>
+                     <tr>
+                        <td>timer</td>
+                        <td>null</td>
+                        <td>自动关闭弹窗的时间(毫秒)1000为1S</td>
+                    </tr>
+                    <tr>
+                        <td>animation</td>
+                        <td>true</td>
+                        <td>如何设置为false，弹窗就没有动画，默认值为pop，还有slide-from-top, slide-from-bottom方式</td>
+                    </tr>
+                    <tr>
+                        <td>inputType</td>
+                        <td>text</td>
+                        <td>改变input标签输入的类型当type属性为input的时候</td>
+                    </tr>
+                    <tr>
+                        <td>inputPlaceholder</td>
+                        <td>null</td>
+                        <td>placeholder</td>
+                    </tr>
+                    <tr>
+                        <td>inputValue</td>
+                        <td>null</td>
+                        <td>input框的默认值（type为input的情况下）</td>
+                    </tr>
+                    <tr>
+                        <td>closeOnConfirm</td>
+                        <td>true</td>
+                        <td>如何设置为false,才可以点击按钮后再执行一个function，适用于确认按钮</td>
+                    </tr>
+                    <tr>
+                        <td>closeOnCancel</td>
+                        <td>true</td>
+                        <td>和确认的一样，这个只能适用于取消按钮</td>
+                    </tr>
+                    <tr>
+                        <td>callback</td>
+                        <td>null</td>
+                        <td>点击确认按钮后所执行的函数
+                            <pre>
+                                swal({
+                                    title: "您确定要删除这条信息吗",
+                                    text: "删除后将无法恢复，请谨慎操作！",
+                                    type: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#DD6B55",
+                                    confirmButtonText: "删除",
+                                    closeOnConfirm: false
+                                }, function () {
+                                    swal("删除成功！");
+                                });
+                            </pre>
+                        </td>
+                    </tr>
+                     
+                </tbody>
+            </table>
+            <table class="table table-bordered thead-colored">
+                <thead class="text-left">
+                    <tr>
+                        <th>基本alert</th>
+                        <th>带标题和内容</th>
+                        <th>success内容</th>
+                        <th>警告并带确认按钮操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="btn-success btn sw-btn1">click me</button></td>
+                        <td><button class="btn-success btn sw-btn2">click me</button></td>
+                        <td><button class="btn-success btn sw-btn3">click me</button></td>
+                        <td><button class="btn-success btn sw-btn4">click me</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>swal("你好");</pre>
+                        </td>
+                        <td>
+                            <pre>
+swal("Here's a message!", "It's pretty, isn't it?")
+或者
+swal({
+    title:"Here's a message!",
+    text:"isn't it?"
+})
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+swal("Here's a message!", "It's pretty","success")
+或者
+swal({
+    title:"Here's a message!",
+    text:"isn't it?",
+    type:"success"
+})  
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+swal({ 
+    title: "Are you sure?", 
+    text: "You will not be!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Yes, delete it!",
+    closeOnConfirm: false },
+    function(){ 
+        swal("Deleted!", "Your imaginary file has been deleted.", "success"); 
+    });
+                            </pre>
+                        </td>
+                    </tr>
+                <tbody>
+            </table>
+            <table class="table table-bordered thead-colored">
+                <thead class="text-left">
+                    <tr>
+                        <th>警告带确认和取消操作</th>
+                        <th>type input</th>
+                        <th>自动关闭</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="btn-success btn sw-btn5">click me</button></td>
+                        <td><button class="btn-success btn sw-btn6">click me</button></td>
+                        <td><button class="btn-success btn sw-btn7">click me</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+swal({ 
+    title: "Are you sure?", 
+    text: "You will not be!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Yes, delete it!",
+    closeOnConfirm: false,
+    closeOnCancel: false },
+    function(isConfirm){
+    if (isConfirm) {
+    swal("Deleted!", "Your imaginary file has been deleted.", "success"); } 
+    else { 
+    swal("Cancelled", "Your imaginary file is safe :)", "error");  
+     } });
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+    swal({
+        title: "你输东西",
+        text: "不输咋地",
+        type: "input",
+        inputType:"text"
+    });
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+swal({ 
+title: "我会自动关!",
+text: "2S后消失",
+timer: 2000,
+showConfirmButton: false 
+});
+                            </pre>
+                        </td>
+                    </tr>
+                <tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        //  基本用法
+        $('.sw-btn1').click(function () {
+            swal("你好");
+        });
+        // 带内容的
+        $('.sw-btn2').click(function () {
+            // swal("Here's a message!", "It's pretty, isn't it?")
+            swal({
+                title:"Here's a message!",
+                text:"isn't it?"
+            })
+        });
+        // 带Type的
+        $('.sw-btn3').click(function(){
+            swal("Here's a message!", "It's pretty","success")
+            // swal({
+            //     title:"Here's a message!",
+            //     text:"isn't it?",
+            //     type:"success"
+            // })  
+        });
+        // 警告
+        $('.sw-btn4').click(function(event) {
+            /* Act on the event */
+            swal({   title: "Are you sure?",   text: "You will not be able to recover this imaginary file!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, delete it!",   closeOnConfirm: false }, function(){   swal("Deleted!", "Your imaginary file has been deleted.", "success"); });
+        });
+
+        $('.sw-btn5').click(function(){
+            swal({   title: "Are you sure?",   text: "You will not be able to recover this imaginary file!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, delete it!",   cancelButtonText: "No, cancel plx!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {     swal("Deleted!", "Your imaginary file has been deleted.", "success");   } else {     swal("Cancelled", "Your imaginary file is safe :)", "error");   } });
+        })
+        $('.sw-btn6').click(function(){
+            swal({
+                title: "你输东西",
+                text: "不输咋地！",
+                type: "input",
+                inputType:"text"
+            });
+        })
+        $('.sw-btn7').click(function(){
+            swal({ 
+                title: "我会自动关!",
+                text: "2S后消失",
+                timer: 2000,
+                showConfirmButton: false 
+                });
+        })
+        
+    </script>

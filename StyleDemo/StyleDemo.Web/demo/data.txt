@@ -1,0 +1,36 @@
+<pre>var asyncPage = $("#asyncPage").page({
+        current: 1,
+        ajaxObj: {
+            url: 'data.txt?action=GETSPM&ChannelID=7169&PageIndex=1&PageSize=1',
+            success: function (data, page) {
+                // 没有传递total，一定要通过下面方式设置，而且要在最前面，而且564应该取后台返回的值
+                if (typeof page.total === 'undefined') {
+                    page.total = 564;
+                }
+                $('#asyncContent > p').html(data);
+                if (page.current === 1) {
+                    $('#upNav .prev').addClass('disabled');
+                } else {
+                    $('#upNav .prev').removeClass('disabled');
+                }
+                if (page.current === page.total) {
+                    $('#upNav .next').addClass('disabled');
+                } else {
+                    $('#upNav .next').removeClass('disabled');
+                }
+            }
+        },
+    	needJump: false,
+    	pageNoParam:"PageIndex"
+    });
+    $('#upNav').delegate('span', 'click', function () {
+        var elem = $(this)
+        if (elem.hasClass('disabled')) {
+            return;
+        }
+        if (elem.hasClass('prev')) {
+            asyncPage.prev();
+        } else {
+            asyncPage.next();
+        }
+    });<pre>

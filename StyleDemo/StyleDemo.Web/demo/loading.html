@@ -1,0 +1,159 @@
+<style>
+    .loading-box{
+        height: 100px;
+        margin-top: 60px;
+    }
+    .loading-box+button{
+        float: right;
+        margin-bottom: 10px;
+        display: block;
+    }
+</style>
+<div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>利用css3实现的加载动画</h5>
+        </div>
+        <div class="panel-content">
+            <p class="font-size-h5 text-base">
+            使用CSS3的特性实现多种动画效果，元素移动、放大缩小、翻转、进度条加载效果等等，使用了很多CSS3新的特性。
+            </p>
+            <!-- <p>
+                使用方法，假如我需要在class为“show-list”的元素中加一个加载动画，那么可以使用<b class="text-danger">$(".show-list").createLoading()</b>的方法，移除加载动画则使用<b class="text-danger">$(".show-list").removeLoading()</b>
+            </p> -->
+            <!-- <p>其中如果需要使用不同的加载动画的话，比如是rotatePanel效果，那么就可以写<b class="text-danger">$(".show-list").createLoading({animateName:"rotatePanel"})</b>,移除为<b class="text-danger">$(".show-list").removeLoading({animateName:"rotatePanel"})</b>，其他类型以此类推
+            </p> -->
+           <p>显示loading:$.maskBox.loadModel("wave");隐藏loading，$.maskBox.remove()</p>
+
+        </div>
+</div>
+<div class="grid-columns">
+    <!-- rotatePanel -->
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"rotatePanel"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="rotatePanel"></div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <!-- doubleBounce -->
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"doubleBounce"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="doubleBounce"></div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <!-- wave -->
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"wave"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="wave">
+                    <div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div>
+                </div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"wanderCube"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="wanderCube">
+                </div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <!-- 基本 -->
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"chaseDot"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="chaseDot">
+                </div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"threeBounce"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="threeBounce">
+                    <div class="sk-b1"></div>
+                    <div class="sk-b2"></div>
+                    <div class="sk-b3"></div>
+                </div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"cubegrid"</h5>
+        </div>
+        <div class="panel-content">
+             <div class="loading-box">
+                <div class="cubegrid">
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                </div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+    <div class="panel-Model col-1">
+        <div class="panel-title">
+            <h5>animateName:"fadeCircle"</h5>
+        </div>
+        <div class="panel-content">
+            <div class="loading-box">
+                <div class="fadeCircle">
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                    <div class="sk-circle"></div>
+                </div>
+            </div>
+            <button class="btn-success btn">查看演示</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".btn-success").click(function(event) {
+        var newType = $(this).siblings('.loading-box').find('div').attr("class");
+        $.maskBox.loadModel(newType);
+    });
+</script>

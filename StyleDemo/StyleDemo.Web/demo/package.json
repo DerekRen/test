@@ -1,0 +1,22 @@
+{
+  "name": "sceneback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init.js",
+  "scripts": {
+    "pageRun": "browser-sync start --server --files **/*.html"
+  },
+  "author": "TC_Scenery",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-less": "^3.0.5",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-uglify": "^1.5.1"
+  }
+}
